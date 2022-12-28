@@ -1,14 +1,25 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld/>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <div class="flex justify-evenly p-10 focus-within:bg-green-100 group">
+    <box v-for="item in Boxes" v-bind="item" :key="item.number" />
+  </div>
 </template>
 
-<style scoped>
+<script>
+import Box from './components/Box.vue'
 
-</style>
+export default {
+  data() {
+    return {
+      // 定義三個 box 的內容
+      Boxes: [
+        {number: 5, color: 'blue'},
+        {number: 2, color: 'purple'},
+        {number: 0, color: 'red'},
+      ]
+    }
+  },
+  components: {
+    Box
+  }
+}
+</script>
