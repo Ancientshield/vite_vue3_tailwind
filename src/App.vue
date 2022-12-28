@@ -1,12 +1,15 @@
 <template>
-  <div class="flex justify-evenly p-10 focus-within:bg-green-100 group">
+  <div class="group flex justify-evenly p-10 focus-within:bg-green-100">
     <box v-for="item in Boxes" v-bind="item" :key="item.number" />
   </div>
-  <div :class="['w-screen h-screen',
-    'flex flex-col',
-    'justify-center items-center',
-    'gap-5',
-  ]">
+  <div
+    :class="[
+      'h-screen w-screen',
+      'flex flex-col',
+      'items-center justify-center',
+      'gap-5'
+    ]"
+  >
     <input type="range" v-model="val" :min="min" :max="max" />
     <ProgressBar :currentVal="val" :minVal="min" :maxVal="max" />
   </div>
@@ -24,9 +27,9 @@ export default {
       val: 100,
       // 定義三個 box 的內容
       Boxes: [
-        {number: 5, color: 'blue'},
-        {number: 2, color: 'purple'},
-        {number: 0, color: 'red'},
+        { number: 5, color: 'blue' },
+        { number: 2, color: 'purple' },
+        { number: 0, color: 'red' }
       ]
     }
   },

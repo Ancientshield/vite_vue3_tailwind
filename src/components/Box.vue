@@ -1,16 +1,16 @@
 <template>
-  <div 
+  <div
     :class="[
       [
-        'w-20 h-20 bg-gray-500 rounded-md',
+        'h-20 w-20 rounded-md bg-gray-500',
         'focus:ring-4 group-hover:text-gray-600',
-        'font-bold text-3xl text-white',
-        'flex justify-center items-center',
+        'text-3xl font-bold text-white',
+        'flex items-center justify-center',
         'cursor-pointer outline-none'
       ],
-      (color==='red') && 'bg-red-500 hover:bg-red-400 ring-red-300',
-      (color==='blue') && 'bg-blue-500 hover:bg-blue-400 ring-blue-300',
-      (color==='purple') && 'bg-purple-500 hover:bg-purple-400 ring-purple-300'
+      color === 'red' && 'bg-red-500 ring-red-300 hover:bg-red-400',
+      color === 'blue' && 'bg-blue-500 ring-blue-300 hover:bg-blue-400',
+      color === 'purple' && 'bg-purple-500 ring-purple-300 hover:bg-purple-400'
     ]"
     :tabindex="number"
   >
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: "Box",
-  props: ["number", "color"]
+  name: 'Box',
+  props: ['number', 'color']
 }
 </script>
